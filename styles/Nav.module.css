@@ -1,0 +1,12 @@
+.nav {
+    padding: 0.5rem 1rem;
+    background-color: powderblue;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav li {
+    margin-right: 1rem;
+}
