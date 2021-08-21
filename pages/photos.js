@@ -33,6 +33,7 @@ export default photos;
 export const getServerSideProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_end=10')
   const photos = await res.json()
+  console.log("printed");
 
   return {
     props: {
@@ -41,6 +42,12 @@ export const getServerSideProps = async () => {
   }
 }
 
+
+// 만약 문서에 출력되는 내용이 항상 고정된 형식과 내용이라고 했을 때
+// 요청에 따라 그때그때 html문서를 생성할 필요없이 첫 요청에 하나의 정적 html문서를 생성 후
+// 그 이후의 요청엔 계속 동일한 문서를 반환
+
+// 비동기함수 getStaticProps 함수 선언
 // export const getStaticProps = async () => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_start=0&_end=10`)
 //   const photos = await res.json()
